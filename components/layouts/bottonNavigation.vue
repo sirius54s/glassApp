@@ -3,7 +3,8 @@
     :value="value"
     color="teal accent-3"
     horizontal
-    :fullscreen="$vuetify.breakpoint.mobile"
+    fixed
+  
   > 
     <v-btn>
       <span>recientes</span>
