@@ -35,7 +35,7 @@
 
         <v-list>
           <v-list-item
-            v-for="n in 5"
+            v-for="n in 2"
             :key="n"
             @click="() => {}"
           >
