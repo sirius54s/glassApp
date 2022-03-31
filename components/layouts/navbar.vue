@@ -1,48 +1,111 @@
 <template>
-  <div>
-    <v-app-bar
-      color="teal accent-3"
-      dense
-      dark
+  <v-toolbar color="orange accent-1">
+    <v-app-bar-nav-icon class="hidden-sm-and-down"></v-app-bar-nav-icon>
+    <v-toolbar-title class="text-h6 mr-6 hidden-sm-and-down">
+      Samsung a12
+    </v-toolbar-title>
+    <v-autocomplete
+      v-model="model"
+      :items="items"
+      :loading="isLoading"
+      :search-input.sync="search"
+      chips
+      clearable
+      hide-details
+      hide-selected
+      item-text="name"
+      item-value="symbol"
+      label="Samsung a12..."
+      solo
     >
-      
-
-      <v-toolbar-title>GlassApp</v-toolbar-title>
-
-      <v-spacer></v-spacer>
-
-      <v-btn icon>
-        <v-icon>mdi-heart</v-icon>
-      </v-btn>
-
-      <v-btn icon>
-        <v-icon>mdi-magnify</v-icon>
-      </v-btn>
-
-      <v-menu
-        left
-        bottom
+      <template v-slot:no-data>
+        <v-list-item>
+          <v-list-item-title>
+          Busca de manera ordenada en nuestra plataforma
+          </v-list-item-title>
+        </v-list-item>
+      </template>
+      <template v-slot:selection="{ attr, on, item, selected }">
+        <v-chip
+          v-bind="attr"
+          :input-value="selected"
+          color="blue-grey"
+          class="white--text"
+          v-on="on"
+        >
+          <v-icon left>
+            mdi-bitcoin
+          </v-icon>
+          <span v-text="item.name"></span>
+        </v-chip>
+      </template>
+      <template v-slot:item="{ item }">
+        <v-list-item-avatar
+          color="indigo"
+          class="text-h5 font-weight-light white--text"
+        >
+          {{ item.name.charAt(0) }}
+        </v-list-item-avatar>
+        <v-list-item-content>
+          <v-list-item-title v-text="item.name"></v-list-item-title>
+          <v-list-item-subtitle v-text="item.symbol"></v-list-item-subtitle>
+        </v-list-item-content>
+        <v-list-item-action>
+          <v-icon>mdi-bitcoin</v-icon>
+        </v-list-item-action>
+      </template>
+    </v-autocomplete>
+    <template v-slot:extension>
+      <v-tabs
+        v-model="tab"
+        :hide-slider="!model"
+        color="blue-grey"
+        slider-color="blue-grey"
       >
-        <template v-slot:activator="{ on, attrs }">
-          <v-btn
-            icon
-            v-bind="attrs"
-            v-on="on"
-          >
-            <v-icon>mdi-dots-vertical</v-icon>
-          </v-btn>
-        </template>
-
-        <v-list>
-          <v-list-item
-            v-for="n in 2"
-            :key="n"
-            @click="() => {}"
-          >
-            <v-list-item-title>Option {{ n }}</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-    </v-app-bar>
-  </div>
+        <v-tab :disabled="!model">
+          Nuevos
+        </v-tab>
+       
+        <v-tab :disabled="!model">
+          Nosotros
+        </v-tab>
+      </v-tabs>
+    </template>
+  </v-toolbar>
 </template>
+
+<script>
+  export default {
+    data: () => ({
+      isLoading: false,
+      items: [],
+      model: null,
+      search: null,
+      tab: null,
+    }),
+
+    watch: {
+      model (val) {
+        if (val != null) this.tab = 0
+        else this.tab = null
+      },
+      search (val) {
+        // Items have already been loaded
+        if (this.items.length > 0) return
+
+        this.isLoading = true
+
+        // Lazily load input items
+        fetch('https://api.coingecko.com/api/v3/coins/list')
+          .then(res => res.clone().json())
+          .then(res => {
+            this.items = res
+          })
+          .catch(err => {
+            console.log(err)
+          })
+          .finally(() => (this.isLoading = false))
+      },
+    },
+  }
+</script>

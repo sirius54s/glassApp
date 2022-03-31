@@ -2,7 +2,7 @@
   <v-div>
     <v-bottom-navigation
       :value="value"
-      color="teal accent-3"
+      color="orange accent-1"
       horizontal
       fixed
       class="d-lg-none d-xl-flex"
@@ -32,7 +32,7 @@
         transition="dialog-bottom-transition"
       >
         <v-card>
-          <v-toolbar dark color="teal accent-3">
+          <v-toolbar dark color="orange accent-1">
             <v-btn icon dark @click="dialog = false">
               <v-icon>mdi-close</v-icon>
             </v-btn>
