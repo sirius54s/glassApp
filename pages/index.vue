@@ -1,9 +1,9 @@
 <template>
   <!-- default -->
-  <v-div>
+  <div>
     <!-- banner de seguridad -->
     <v-banner two-line v-model="bannerSeguridad">
-      <v-avatar slot="icon" color="orange accent-1" size="40">
+      <v-avatar slot="icon" color="orange accent-º  º º º º º º " size="40">
         <v-icon icon="mdi-lock" color="white"> mdi-lock </v-icon>
       </v-avatar>
 
@@ -93,7 +93,7 @@
         </v-card-actions>
       </v-card>
     </template>
-  </v-div>
+  </div>
 </template>
 
 <script>
