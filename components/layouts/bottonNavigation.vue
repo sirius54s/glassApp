@@ -1,5 +1,5 @@
 <template>
-  <v-div>
+  <div>
     <v-bottom-navigation
       :value="value"
       color="orange accent-1"
@@ -32,7 +32,7 @@
         transition="dialog-bottom-transition"
       >
         <v-card>
-          <v-toolbar dark color="orange accent-1">
+          <v-toolbar dark color="orange accent-2">
             <v-btn icon dark @click="dialog = false">
               <v-icon>mdi-close</v-icon>
             </v-btn>
@@ -71,13 +71,15 @@
         </v-card>
       </v-dialog>
     </v-row>
-  </v-div>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
+    
     return {
+      value: 1,
       dialog: false,
       notifications: false,
       sound: true,
