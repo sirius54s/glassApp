@@ -65,10 +65,6 @@
         <v-tab :disabled="!model">
           Nuevos
         </v-tab>
-       
-        <v-tab :disabled="!model">
-          Nosotros
-        </v-tab>
       </v-tabs>
     </template>
   </v-toolbar>
