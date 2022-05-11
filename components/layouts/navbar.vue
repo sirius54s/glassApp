@@ -32,13 +32,12 @@
         <v-dialog v-model="dialogBuscador" max-width="380">
           <v-card class="px-5 pt-5">
             <v-autocomplete v-model="model" :items="items" :loading="isLoading" :search-input.sync="search" chips
-              clearable hide-details hide-selected item-text="name" item-value="symbol" label="Search for a coin..."
+              clearable hide-details hide-selected item-text="name" item-value="symbol" label="Buscar por modelo..."
               solo>
               <template v-slot:no-data>
                 <v-list-item>
                   <v-list-item-title>
-                    Search for your favorite
-                    <strong>Cryptocurrency</strong>
+                    Soporta solo por modelo simple
                   </v-list-item-title>
                 </v-list-item>
               </template>
