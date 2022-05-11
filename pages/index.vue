@@ -98,13 +98,13 @@ export default {
         src: "http://cdn.shopify.com/s/files/1/0090/5913/9662/products/KlMFp7dLT-MICA-11D-OFICIAL_e1752f3d-1b03-4b23-b483-adf10db50c83.jpg?v=1619702919",
       },
       {
-        src: "https://m.media-amazon.com/images/I/71mUWg7Ph6L._AC_SX679_.jpg",
+        src: "https://feria.bandurria.pe/wp-content/uploads/2020/11/ELE-FS-0007-3.png",
       },
       {
-        src: "https://http2.mlstatic.com/D_644170-MLA46451256552_062021-O.jpg",
+        src: "https://promart.vteximg.com.br/arquivos/ids/896154-1000-1000/image-1f7a57adb1bf4cbb946b0b4158372831.jpg?v=637546462270500000",
       },
       {
-        src: "https://i.linio.com/p/c15ebf71725a73a7751f5cd0c3eedd01-product.jpg",
+        src: "https://s.alicdn.com/@sc04/kf/H29ac9f2bf32c41a9982a80d264a46180p.jpg",
       },
     ],
 
