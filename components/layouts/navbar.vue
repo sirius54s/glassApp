@@ -66,6 +66,7 @@
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="dark" text @click="dialogBuscador = false">Cancelar</v-btn>
+              <v-btn color="orange" text @click="dialogBuscador = false">Buscar</v-btn>
             </v-card-actions>
 
           </v-card>
