@@ -18,25 +18,23 @@
     </v-banner>
 
     <!-- carousel -->
-    <template >
+    <template>
       <v-carousel :show-arrows="false">
-        <v-carousel-item
-          v-for="(item, i) in imagenCarousel"
-          :key="i"
-          :src="item.src"
-        ></v-carousel-item>
+        <v-carousel-item v-for="(item, i) in imagenCarousel" :key="i" :src="item.src"></v-carousel-item>
       </v-carousel>
     </template>
     <!-- breadcrumbs -->
-    <template color="orange accent-3">
-      <div mt-5>
-        <v-breadcrumbs :items="itemsCategoria" divider="/"></v-breadcrumbs>
+    <template>
+      <div class="ml-5 mt-1">
+        <h3>inicio <v-icon color="orange accent-3" class="pb-1">mdi-arrow-down-circle</v-icon>
+        </h3>
+
       </div>
     </template>
     <!-- card index -->
-    <template  mt-5>
+    <template>
       <div v-for="(itemDefault, index) in defaultData" :key="index">
-      <v-divider></v-divider>
+        <h1 class="mt-2"></h1>
         <v-card class="mx-auto" max-width="344" outlined>
           <v-list-item three-line>
             <v-list-item-content>
@@ -46,27 +44,20 @@
               </v-list-item-title>
               <v-list-item-subtitle>
                 <v-list three-line>
-                  <div
-                    v-for="(
+                  <div v-for="(
                       itemCompatibilidad, index
-                    ) in itemDefault.compatibilidad"
-                    :key="index"
-                  >
-                  
+                    ) in itemDefault.compatibilidad" :key="index">
+
 
                     <v-list-item>
                       <v-list-item-avatar>
                         <v-img :src="itemCompatibilidad.avatar"></v-img>
-                      </v-list-item-avatar> 
+                      </v-list-item-avatar>
 
                       <v-list-item-content>
-                        <v-list-item-title
-                          v-html="itemCompatibilidad.titulo"
-                        ></v-list-item-title>
-                        
-                        <v-list-item-subtitle
-                          v-html="itemCompatibilidad.usuario"
-                        ></v-list-item-subtitle>
+                        <v-list-item-title v-html="itemCompatibilidad.titulo"></v-list-item-title>
+
+                        <v-list-item-subtitle v-html="itemCompatibilidad.usuario"></v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
                   </div>
@@ -76,20 +67,20 @@
 
             <v-list-item-avatar tile size="80">
               <v-img
-                src="https://www.productsvsprice.com/images/electronics/smartphone/samsung/samsung-galaxy-a12-smartphone-details-and-price-310492406.svg"
-              >
-              </v-img
-            ></v-list-item-avatar>
+                src="https://www.productsvsprice.com/images/electronics/smartphone/samsung/samsung-galaxy-a12-smartphone-details-and-price-310492406.svg">
+              </v-img>
+            </v-list-item-avatar>
           </v-list-item>
 
           <v-card-actions>
             <v-btn outlined rounded text> Agregar compatiblidad </v-btn>
           </v-card-actions>
         </v-card>
-                        
+
       </div>
     </template>
   </div>
+
 </template>
 
 <script>
@@ -101,14 +92,6 @@ export default {
   data: () => ({
     bannerSeguridad: true,
     header: "usuario:",
-
-    itemsCategoria: [
-      {
-        text: "inicio",
-        disabled: false,
-        href: "#",
-      },
-    ],
 
     imagenCarousel: [
       {
@@ -164,4 +147,5 @@ export default {
 //{ divider: true, inset: true },
 </script>
 
-<style></style>
+<style>
+</style>
