@@ -2,7 +2,7 @@
   <div>
     <v-bottom-navigation
       :value="value"
-      color="orange accent-1"
+      color="orange accent-4"
       horizontal
       fixed
       class="d-lg-none d-xl-flex"
