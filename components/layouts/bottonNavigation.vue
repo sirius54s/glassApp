@@ -32,7 +32,7 @@
         transition="dialog-bottom-transition"
       >
         <v-card>
-          <v-toolbar dark color="orange accent-2">
+          <v-toolbar dark color="orange accent-3">
             <v-btn icon dark @click="dialog = false">
               <v-icon>mdi-close</v-icon>
             </v-btn>
@@ -48,7 +48,7 @@
               <v-list-item-content>
                 <v-list-item-title>Terminos y condiciones</v-list-item-title>
                 <v-list-item-subtitle
-                  >Nuestra web esta para facilitar la vida util de sus servicios tecnicos</v-list-item-subtitle
+                  >Nuestra web esta para facilitar su trabajo del local comercial </v-list-item-subtitle
                 >
               </v-list-item-content>
             </v-list-item>
