@@ -7,18 +7,18 @@
         <v-icon icon="mdi-lock" color="white"> mdi-lock </v-icon>
       </v-avatar>
 
-      Nuestra plataforma esta protegida contra rastreo web.
+      Plataforma protegida contra rastreo web.
 
       <template v-slot:actions>
-        <v-btn text color="orange accent-1" @click="bannerSeguridad = false">
+        <v-btn text color="orange accent-3" @click="bannerSeguridad = false">
           Cerrar
         </v-btn>
-        <v-btn text color="orange accent-1"> Mas detalles </v-btn>
+        <v-btn text color="orange accent-3"> Mas detalles </v-btn>
       </template>
     </v-banner>
 
     <!-- carousel -->
-    <template>
+    <template >
       <v-carousel :show-arrows="false">
         <v-carousel-item
           v-for="(item, i) in imagenCarousel"
@@ -28,14 +28,15 @@
       </v-carousel>
     </template>
     <!-- breadcrumbs -->
-    <template color="orange accent-1">
+    <template color="orange accent-3">
       <div mt-5>
         <v-breadcrumbs :items="itemsCategoria" divider="/"></v-breadcrumbs>
       </div>
     </template>
     <!-- card index -->
     <template  mt-5>
-      <div v-for="(itemDefault, index) in defaultData" :key="index" mt-5>
+      <div v-for="(itemDefault, index) in defaultData" :key="index">
+      <v-divider></v-divider>
         <v-card class="mx-auto" max-width="344" outlined>
           <v-list-item three-line>
             <v-list-item-content>
@@ -51,23 +52,20 @@
                     ) in itemDefault.compatibilidad"
                     :key="index"
                   >
-                    <v-subheader
-                      v-if="header"
-                      :key="index"
-                      v-text="header"
-                    ></v-subheader>
+                  
 
                     <v-list-item>
                       <v-list-item-avatar>
                         <v-img :src="itemCompatibilidad.avatar"></v-img>
-                      </v-list-item-avatar>
+                      </v-list-item-avatar> 
 
                       <v-list-item-content>
                         <v-list-item-title
                           v-html="itemCompatibilidad.titulo"
                         ></v-list-item-title>
+                        
                         <v-list-item-subtitle
-                          v-html="itemCompatibilidad.subtitulo"
+                          v-html="itemCompatibilidad.usuario"
                         ></v-list-item-subtitle>
                       </v-list-item-content>
                     </v-list-item>
@@ -135,12 +133,12 @@ export default {
           {
             avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
             titulo: "samsung a03",
-            subtitulo: `usuario: raul011`,
+            usuario: `raul011`,
           },
           {
             avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
             titulo: "samsung a03",
-            subtitulo: `usuario: raul011`,
+            usuario: `raul011`,
           },
         ],
       },
@@ -151,12 +149,12 @@ export default {
           {
             avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
             titulo: "samsung a03",
-            subtitulo: `usuario: raul011`,
+            usuario: `raul011`,
           },
           {
             avatar: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
             titulo: "samsung a03",
-            subtitulo: `usuario: raul011`,
+            usuario: `raul011`,
           },
         ],
       },
