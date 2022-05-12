@@ -17,7 +17,7 @@
         </v-btn>
 
         <v-btn icon>
-          <v-icon>mdi-dots-vertical</v-icon>
+          <v-icon color="orange">mdi-plus-circle-outline</v-icon>
         </v-btn>
       </v-app-bar>
       <v-sheet id="scrolling-techniques-7" class="overflow-y-auto" max-height="50">
@@ -31,6 +31,29 @@
       <v-layout row justify-center>
         <v-dialog v-model="dialogBuscador" max-width="380">
           <v-card class="px-5 pt-5">
+            <h3>Selecionar</h3>
+            
+
+           <v-autocomplete
+            ref="marca"
+            v-model="marca"
+            :items="marcaLista"
+            label="marca"
+            placeholder="Selecinar..."
+            required
+          ></v-autocomplete>
+
+          <v-autocomplete
+            ref="modelo"
+            v-model="modelo"
+            :items="modeloLista"
+            label="modelo"
+            placeholder="selecionar..."
+            required
+          ></v-autocomplete>
+
+              <br>
+
             <v-autocomplete v-model="model" :items="items" :loading="isLoading" :search-input.sync="search" chips
               clearable hide-details hide-selected item-text="name" item-value="symbol" label="Buscar por modelo..."
               solo>
@@ -62,6 +85,8 @@
                 </v-list-item-action>
               </template>
             </v-autocomplete>
+            <br>
+
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn color="dark" text @click="dialogBuscador = false">Cancelar</v-btn>
@@ -91,7 +116,15 @@ export default {
       model: null,
       search: null,
       tab: null,
+      
+      marca: null,
+      modelo: null,
+      marcaLista : ["samsung","huawei"],
+      modeloLista:["j2 prime","j5 prime"]
     }
+    
+  },
+ mounted() {
     
   },
   watch: {
