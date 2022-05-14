@@ -79,6 +79,26 @@
 
       </div>
     </template>
+
+    <!-- "aviso" no compatible con pantallas de escritorio -->
+    <template>
+<v-row justify="center">
+    <v-dialog
+      v-model="mostrarAvisoNoCompatible"
+      persistent
+      max-width="500"
+    >
+     
+      <v-card>
+        <v-card-title class="text-h3">
+          AVISO
+        </v-card-title>
+        <v-card-text class="display-1">Lo sentimos pero GlassApp no esta disponible para pantallas de escritorio solo puedes usar nuestro servicio en telefonos moviles .</v-card-text>
+        
+      </v-card>
+    </v-dialog>
+  </v-row>
+    </template>
   </div>
 
 </template>
@@ -92,6 +112,8 @@ export default {
   data: () => ({
     bannerSeguridad: true,
     header: "usuario:",
+
+    mostrarAvisoNoCompatible: false,
 
     imagenCarousel: [
       {
@@ -142,7 +164,13 @@ export default {
         ],
       },
     ],
+    
   }),
+  mounted () {
+      if(screen.width > 550){
+        this.mostrarAvisoNoCompatible = true
+      }
+    }
 };
 //{ divider: true, inset: true },
 </script>

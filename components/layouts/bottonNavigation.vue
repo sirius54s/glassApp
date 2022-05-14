@@ -77,7 +77,7 @@
                 <v-icon color="blue">mdi-plus-circle</v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-title>Nueva funcion - fecha 19/05/22</v-list-item-title>
+                <v-list-item-title>Nueva funcion - 19/05/22</v-list-item-title>
                 <v-list-item-subtitle
                   >hemos agregado un nuevo boton para facilitar la busqueda</v-list-item-subtitle
                 >
@@ -89,7 +89,7 @@
                 <v-icon color="green">mdi-playlist-check</v-icon>
               </v-list-item-action>
               <v-list-item-content>
-                <v-list-item-title>Mejora - fecha 18/05/22</v-list-item-title>
+                <v-list-item-title>Mejora - 18/05/22</v-list-item-title>
                 <v-list-item-subtitle
                   >hemos mejorado la plataforma</v-list-item-subtitle
                 >

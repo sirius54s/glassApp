@@ -7,7 +7,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - glassApp',
-    title: 'glassApp',
+    title: 'inicio',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -46,6 +46,32 @@ export default {
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+  ],
+
+  modules: [
+    [
+      '@nuxtjs/firebase',
+      
+      {
+        config: {
+          apiKey: "AIzaSyBBNJF04yTg0Hy3qeyHQ_EuvP4I1Ai92Hc",
+          authDomain: "glassapp-ce8be.firebaseapp.com",
+          projectId: "glassapp-ce8be",
+          storageBucket: "glassapp-ce8be.appspot.com",
+          messagingSenderId: "332907790741",
+          appId: "1:332907790741:web:ac302840e155e47aeef69c",
+          measurementId: "G-4HKPLJJPMZ"
+        },
+        services: {
+          auth: true, // Just as example. Can be any other service.
+          firestore: true,
+          analytics: true,
+          messaging: true,
+          performance: true,
+          functions: true,
+        }
+      }
+    ]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
